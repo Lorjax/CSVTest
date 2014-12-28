@@ -1,0 +1,48 @@
+<h1>Listing computers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hersteller</th>
+      <th>Mainboard</th>
+      <th>Cpu</th>
+      <th>Ram</th>
+      <th>Bios</th>
+      <th>Lan</th>
+      <th>Macadresse</th>
+      <th>Grafikkarte</th>
+      <th>Os</th>
+      <th>Room</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @computers.each do |computer| %>
+      <tr>
+        <td><%= computer.name %></td>
+        <td><%= computer.hersteller %></td>
+        <td><%= computer.mainboard %></td>
+        <td><%= computer.cpu %></td>
+        <td><%= computer.ram %></td>
+        <td><%= computer.bios %></td>
+        <td><%= computer.lan %></td>
+        <td><%= computer.macadresse %></td>
+        <td><%= computer.grafikkarte %></td>
+        <td><%= computer.os %></td>
+        <td><%= computer.room.nummer %></td>
+        <td><%= link_to 'Show', computer %></td>
+        <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
+        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br><br>
+
+<%= form_tag import_computers_path, multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag 'import' %>
+<% end %>

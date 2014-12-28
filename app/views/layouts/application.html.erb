@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Testing!" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+
+ 
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="nav-bar right">
+       <ul class="button-group">
+         <li><%= link_to 'Räume', rooms_path, class: "button" %></li>
+         <li><%= link_to 'Computer', computers_path, class: "button" %></li>
+        </ul>
+      </div>
+      <h1>CSV <small>Testing Stuff</small></h1>
+      <hr/>
+    </div>
+  </div>
+ 
+   
+ 
+ 
+   
+ 
+  <div class="row">
+    <% if flash[:notice] %>
+    <div class="large-3">
+      <div data-alert class="alert-box success radius">
+        <%= flash[:notice] %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    </div>
+    <% end %>
+ 
+     
+    <div class="large-9 columns" role="content">
+ 
+      <%= yield %>
+    <br>
+    <h3>params</h3>
+    <%= params %>
+    </div>
+ 
+     
+ 
+ 
+     
+ 
+    <aside class="large-3 columns">
+ 
+      <h5>Aktionen</h5>
+      <ul class="side-nav">
+        <% if params["controller"] == "rooms" %>
+          <li><%= link_to "Raum hinzufügen", new_room_path %></li>
+        <% elsif params["controller"] == "computers" %>
+          <li><%= link_to 'Computer hinzufügen', new_computer_path %></li>
+        <% end %>
+      </ul>
+ 
+      <!--<div class="panel">
+        <h5>Featured</h5>
+        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+        <a href="#">Read More →</a>
+      </div>-->
+ 
+</aside>
+ 
+     
+  </div>
+ 
+   
+ 
+ 
+   
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>Hier wird noch gespielt!</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
+
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

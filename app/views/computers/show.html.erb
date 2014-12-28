@@ -1,0 +1,57 @@
+<p>
+  <strong>Name:</strong>
+  <%= @computer.name %>
+</p>
+
+<p>
+  <strong>Hersteller:</strong>
+  <%= @computer.hersteller %>
+</p>
+
+<p>
+  <strong>Mainboard:</strong>
+  <%= @computer.mainboard %>
+</p>
+
+<p>
+  <strong>Cpu:</strong>
+  <%= @computer.cpu %>
+</p>
+
+<p>
+  <strong>Ram:</strong>
+  <%= @computer.ram %>
+</p>
+
+<p>
+  <strong>Bios:</strong>
+  <%= @computer.bios %>
+</p>
+
+<p>
+  <strong>Lan:</strong>
+  <%= @computer.lan %>
+</p>
+
+<p>
+  <strong>Macadresse:</strong>
+  <%= @computer.macadresse %>
+</p>
+
+<p>
+  <strong>Grafikkarte:</strong>
+  <%= @computer.grafikkarte %>
+</p>
+
+<p>
+  <strong>Os:</strong>
+  <%= @computer.os %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @computer.room.nummer %>
+</p>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>

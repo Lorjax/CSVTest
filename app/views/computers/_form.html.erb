@@ -1,0 +1,16 @@
+<%= simple_form_for(@computer) do |f| %>
+<div class="form">
+<%= f.input :name %>
+<%= f.input :hersteller %>
+<%= f.input :mainboard %>
+<%= f.input :cpu %>
+<%= f.input :ram %>
+<%= f.input :bios %>
+<%= f.input :lan %>
+<%= f.input :macadresse %>
+<%= f.input :grafikkarte %>
+<%= f.input :os %>
+<%= f.association :room, label_method: :nummer %>
+<%= f.submit 'Speichern' %>
+</div>
+<% end %>

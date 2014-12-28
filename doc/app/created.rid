@@ -1,0 +1,10 @@
+Thu, 02 Oct 2014 19:24:49 +0200
+README.rdoc	Thu, 02 Oct 2014 19:11:15 +0200
+app/controllers/application_controller.rb	Thu, 02 Oct 2014 19:11:15 +0200
+app/controllers/computers_controller.rb	Thu, 02 Oct 2014 19:17:17 +0200
+app/controllers/rooms_controller.rb	Thu, 02 Oct 2014 19:14:32 +0200
+app/helpers/application_helper.rb	Thu, 02 Oct 2014 19:11:15 +0200
+app/helpers/computers_helper.rb	Thu, 02 Oct 2014 19:17:17 +0200
+app/helpers/rooms_helper.rb	Thu, 02 Oct 2014 19:14:32 +0200
+app/models/computer.rb	Thu, 02 Oct 2014 19:17:17 +0200
+app/models/room.rb	Thu, 02 Oct 2014 19:14:32 +0200

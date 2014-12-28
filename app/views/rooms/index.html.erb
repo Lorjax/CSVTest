@@ -1,0 +1,36 @@
+<h1>Listing rooms</h1>
+<br>
+<br>
+<img src="/assets/bs.png" usemap="#yeah" width="568" height="460" style="display: block;" />
+<map name="yeah">
+  <area href="<%= url_for new_room_path %>" coords="0,0,100,100" shape="rect" />
+</map>
+<table>
+  <thead>
+    <tr>
+      <th>Nummer</th>
+      <th>Anz. Computer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.nummer %></td>
+        <% if room.computers.size != 0 %>
+          <td><%= room.computers.size %></td>
+        <% else %>
+          <td>keine</td>
+        <% end %>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Room', new_room_path %>
